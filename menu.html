@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Menu | Andy's Club – Greek Restaurant in Ogden, UT</title>
+<meta name="description" content="Full menu for Andy's Club in Harrisville, UT. Authentic Greek food including souvlaki, gyros, steaks, salads, and more."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cream:#F5F0E8;--warm-white:#FAF8F4;--olive:#6B7C5A;--olive-dark:#4A5A3A;
+  --tan:#C4A882;--tan-light:#E8D8C0;--charcoal:#2C2C28;--grey:#8A8680;
+  --white:#FFFFFF;--radius:6px;
+  --serif:'Playfair Display',serif;--sans:'Source Sans 3',sans-serif;
+  /* legacy aliases */
+  --navy:#2C2C28;--blue:#2C2C28;--blue-mid:#4A5A3A;--blue-light:#F5F0E8;
+  --blue-dark:#2C2C28;--sky:#6B7C5A;--gold:#C4A882;--text:#2C2C28;
+  --muted:#8A8680;--gray:#8A8680;--light:#E8D8C0;--offwhite:#FAF8F4;
+  --off-white:#FAF8F4;--border:#E8D8C0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--text);background:var(--white)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{background:var(--blue);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--serif);font-size:1.4rem;color:var(--white);letter-spacing:.5px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:none;flex-direction:column;background:var(--blue);position:absolute;top:64px;left:0;width:100%;padding:1rem 0}
+.nav-links.open{display:flex}
+.nav-links a{color:var(--white);padding:.75rem 1.5rem;font-size:1rem;font-weight:600;transition:background .15s}
+.nav-links a:hover,.nav-links a.active{background:var(--blue-mid)}
+.hamburger{background:none;border:none;cursor:pointer;padding:.5rem;display:flex;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:.2s}
+@media(min-width:768px){
+  .hamburger{display:none}
+  .nav-links{display:flex;flex-direction:row;position:static;padding:0;width:auto;background:none}
+  .nav-links a{padding:.5rem 1rem}
+}
+
+/* PAGE HEADER */
+.page-header{background:var(--blue);padding:3rem 1.25rem 2.5rem;text-align:center}
+.page-header h1{font-family:var(--serif);color:var(--white);font-size:2.4rem;margin-bottom:.5rem}
+.page-header p{color:rgba(255,255,255,.75);font-size:1.05rem}
+.gold-line{width:60px;height:3px;background:var(--gold);margin:.75rem auto 0}
+
+/* MENU TABS */
+.menu-tabs-wrap{background:var(--blue-light);border-bottom:2px solid var(--border);position:sticky;top:64px;z-index:90;overflow-x:auto}
+.menu-tabs{display:flex;max-width:1100px;margin:0 auto;padding:0 1rem;gap:0;white-space:nowrap}
+.menu-tabs a{padding:.85rem 1.1rem;font-weight:700;font-size:.9rem;color:var(--muted);border-bottom:3px solid transparent;text-transform:uppercase;letter-spacing:.5px;transition:.15s;display:inline-block}
+.menu-tabs a:hover{color:var(--blue);border-bottom-color:var(--blue-mid)}
+.menu-tabs a.active{color:var(--blue);border-bottom-color:var(--gold)}
+
+/* MENU BODY */
+.menu-body{max-width:1100px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+
+/* CATEGORY SECTION */
+.menu-section{margin-bottom:3rem;scroll-margin-top:130px}
+.menu-section h2{font-family:var(--serif);font-size:1.6rem;color:var(--blue);padding-bottom:.6rem;border-bottom:2px solid var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.menu-section h2 .cat-icon{font-size:1.3rem}
+
+/* MENU GRID */
+.menu-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:600px){.menu-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.menu-grid{grid-template-columns:1fr 1fr 1fr}}
+
+/* MENU CARD */
+.menu-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.25rem;display:flex;flex-direction:column;gap:.35rem;transition:box-shadow .15s}
+.menu-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.09)}
+.menu-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.item-name{font-weight:700;font-size:1rem;color:var(--text);line-height:1.3}
+.item-price{font-weight:700;font-size:1rem;color:var(--blue);white-space:nowrap;flex-shrink:0}
+.item-desc{font-size:.88rem;color:var(--muted);line-height:1.5}
+
+/* ADD-ONS: narrower list */
+.addon-list{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+@media(min-width:900px){.addon-list{grid-template-columns:1fr 1fr 1fr 1fr}}
+.addon-card{background:var(--blue-light);border-radius:var(--radius);padding:.65rem .9rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.addon-name{font-size:.9rem;font-weight:600;color:var(--text)}
+.addon-price{font-size:.9rem;font-weight:700;color:var(--blue);white-space:nowrap}
+.addon-desc{font-size:.8rem;color:var(--muted);grid-column:1/-1;margin-top:.1rem}
+
+/* ORDER CTA */
+.order-cta{background:var(--blue);border-radius:var(--radius);padding:2.5rem 2rem;text-align:center;margin-top:3rem}
+.order-cta h3{font-family:var(--serif);color:var(--white);font-size:1.6rem;margin-bottom:.6rem}
+.order-cta p{color:rgba(255,255,255,.8);margin-bottom:1.5rem}
+.btn-order{display:inline-block;background:var(--gold);color:var(--white);font-weight:700;font-size:1.05rem;padding:14px 36px;border-radius:var(--radius);letter-spacing:.3px;transition:background .15s}
+.btn-order:hover{background:#b8943c}
+
+/* FOOTER */
+footer{background:#111;color:#aaa;padding:2rem 1.25rem;text-align:center;font-size:.9rem;line-height:1.8}
+footer a{color:var(--gold)}
+body{background:var(--cream)!important}
+.logo-wrap{background:#fff;border-radius:50%;padding:4px;display:inline-flex;align-items:center;justify-content:center;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" style="display:flex;align-items:center;"><div class="logo-wrap"><img src="/andy-logo.png" alt="Andy's Club" style="height:52px;width:52px;object-fit:contain;"></div></a>
+    <button class="hamburger" id="hbg" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/menu" class="active">Menu</a>
+      <a href="https://andys-club-ogden.cloveronline.com/menu/all" target="_blank" rel="noopener">Order Online</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Our Menu</h1>
+  <p>Authentic Greek cuisine made fresh daily in Harrisville, UT</p>
+  <div class="gold-line"></div>
+</div>
+
+<div class="menu-tabs-wrap">
+  <div class="menu-tabs">
+    <a href="#appetizers">Appetizers</a>
+    <a href="#salads">Salads</a>
+    <a href="#mains">Mains</a>
+    <a href="#combos">Combos</a>
+    <a href="#sandwiches">Sandwiches</a>
+    <a href="#add-ons">Add-Ons</a>
+    <a href="#desserts">Desserts</a>
+    <a href="#take-for-later">Take for Later</a>
+    <a href="#kids">Kids Menu</a>
+  </div>
+</div>
+
+<div class="menu-body">
+
+  <!-- APPETIZERS -->
+  <div class="menu-section" id="appetizers">
+    <h2><span class="cat-icon"></span> Appetizers</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Greek Sampler</span><span class="item-price">$20.99</span></div>
+        <p class="item-desc">A savory spread of dolmathaki, Greek meatballs, spanakopita, tyropita, Greek peppers and olives, feta cheese and Greek bread.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Dolmathaki (3 pc)</span><span class="item-price">$8.99</span></div>
+        <p class="item-desc">Hand rolled grape leaves stuffed with ground beef, rice, and herbs. Steamed and served warm. A local favorite!</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Spanakopita (2pc)</span><span class="item-price">$4.79</span></div>
+        <p class="item-desc">Spinach and cheese wrapped in flaky phyllo dough. Served warm.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Tyropita (2pc)</span><span class="item-price">$4.79</span></div>
+        <p class="item-desc">A blend of three cheeses wrapped in flaky phyllo dough. Served warm.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Chicken Wings – 6 Pc</span><span class="item-price">$9.99</span></div>
+        <p class="item-desc">Lightly breaded with a spicy kick. Served with ranch.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Chicken Wings – 12 Pc</span><span class="item-price">$16.49</span></div>
+        <p class="item-desc">Lightly breaded with a spicy kick. Served with ranch.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Deep Fried Mushrooms</span><span class="item-price">$8.99</span></div>
+        <p class="item-desc">Served with house made cocktail sauce.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Mozzarella Sticks</span><span class="item-price">$7.99</span></div>
+        <p class="item-desc">Served with marinara sauce.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Greek Meatballs (2pc)</span><span class="item-price">$2.49</span></div>
+        <p class="item-desc">Ground beef mixed with breadcrumbs, herbs and spices.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Feta Cheese &amp; Olives Plate</span><span class="item-price">$6.99</span></div>
+        <p class="item-desc">Feta cheese, bell peppers, tomato, onion, Greek peppers and olives.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SALADS -->
+  <div class="menu-section" id="salads">
+    <h2><span class="cat-icon"></span> Salads</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Authentic Greek Salad</span><span class="item-price">$12.79</span></div>
+        <p class="item-desc">Cucumbers, green bell peppers, onions, tomatoes, feta cheese, hard boiled egg, Greek peppers, and olives. Includes Greek bread. Option to add gyro meat or chicken.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Sheepherders Salad</span><span class="item-price">$11.99</span></div>
+        <p class="item-desc">Iceberg lettuce, purple cabbage, tomatoes, onions, Greek peppers and olives, bell peppers, hard-boiled egg and feta cheese. Served with Greek bread. Option to add grilled chicken or gyro meat.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">House Side Salad</span><span class="item-price">$5.99</span></div>
+        <p class="item-desc">Iceberg lettuce, tomato, onion, purple cabbage, Greek peppers and bell peppers. Served with Greek bread.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAINS -->
+  <div class="menu-section" id="mains">
+    <h2><span class="cat-icon"></span> Mains</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">18oz Ribeye</span><span class="item-price">$30.99</span></div>
+        <p class="item-desc">Cut in house and seasoned. Includes side salad, Greek bread, and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Andy's Special Steak 12oz Sirloin</span><span class="item-price">$24.99</span></div>
+        <p class="item-desc">Cut in house and seasoned. Includes side salad and Greek bread. Choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Souvlaki Dinner (1 Stick)</span><span class="item-price">$17.49</span></div>
+        <p class="item-desc">Choice of chicken, pork, or turkey. Includes side salad, Greek bread, and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Souvlaki Dinner Lite</span><span class="item-price">$16.49</span></div>
+        <p class="item-desc">1 Stick of Souvlaki (chicken, pork, or turkey). Includes side salad and Greek bread.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Pork Chops (2pc)</span><span class="item-price">$18.99</span></div>
+        <p class="item-desc">Flame grilled marinated bone-in chops served with side salad, Greek bread, and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Lamb Chops 16oz</span><span class="item-price">$29.49</span></div>
+        <p class="item-desc">Includes side salad and Greek bread. Choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Chicken Plate</span><span class="item-price">$16.49</span></div>
+        <p class="item-desc">Grilled chicken breast topped with sautéed mushrooms. Includes salad, Greek bread and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Chopped Steak (Ground Sirloin)</span><span class="item-price">$16.49</span></div>
+        <p class="item-desc">Topped with sautéed mushrooms, onions, green bell peppers and cheese. Served with side salad and Greek bread. Choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Fish &amp; Chips (3pc)</span><span class="item-price">$16.99</span></div>
+        <p class="item-desc">Beer battered cod. Includes side salad, Greek bread and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Shrimp Plate (6pc)</span><span class="item-price">$18.99</span></div>
+        <p class="item-desc">Deep fried shrimp served with cocktail sauce. Includes side salad, Greek bread and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">8oz Salmon Dinner</span><span class="item-price">$20.99</span></div>
+        <p class="item-desc">Grilled fillet. Includes side salad, Greek bread, and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Gyro Dinner (Lamb or Chicken)</span><span class="item-price">$16.49</span></div>
+        <p class="item-desc">Choice of lamb or chicken. Tomato, onion and tzatziki sauce wrapped in warm pita bread. Served with side and choice of lemon rice or fries.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMBOS -->
+  <div class="menu-section" id="combos">
+    <h2><span class="cat-icon"></span> Combos</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Andy's Combo</span><span class="item-price">$29.99</span></div>
+        <p class="item-desc">8oz sirloin, 1 stick of souvlaki (chicken, pork or turkey), 1 dolmathaki, 1 Greek meatball. Includes side salad, Greek bread and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Souvlaki Combo (2 Sticks)</span><span class="item-price">$26.99</span></div>
+        <p class="item-desc">2 sticks of souvlaki (chicken, pork, or turkey). Includes side salad, Greek bread, and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">#1 Combo</span><span class="item-price">$20.99</span></div>
+        <p class="item-desc">1 stick of souvlaki (chicken, pork, or turkey), 1 dolmathaki, 1 Greek meatball. Side salad, Greek bread and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">#2 Combo</span><span class="item-price">$29.99</span></div>
+        <p class="item-desc">2 sticks of souvlaki (chicken, pork, or turkey), 1 dolmathaki, 1 Greek meatball, side salad, Greek bread, and choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">12oz Steak &amp; Shrimp</span><span class="item-price">$28.49</span></div>
+        <p class="item-desc">12oz sirloin &amp; 3 fried shrimp. Includes side salad, Greek bread and choice of lemon rice or fries.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SANDWICHES -->
+  <div class="menu-section" id="sandwiches">
+    <h2><span class="cat-icon"></span> Sandwiches</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Gyro Sandwich</span><span class="item-price">$14.39</span></div>
+        <p class="item-desc">Choice of lamb or chicken. Tomato, onion, and tzatziki sauce wrapped in warm pita bread. Includes choice of lemon rice, fries or side salad.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Grilled Cheese</span><span class="item-price">$7.99</span></div>
+        <p class="item-desc">Served on Greek bread, with choice of lemon rice, fries or side salad. Add ham option available.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Hamburger</span><span class="item-price">$11.49</span></div>
+        <p class="item-desc">1/3lb burger on sesame bun. Choice of lemon rice, fries or side salad. Add cheese $0.99. Add bacon $1.99.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Chicken Sandwich</span><span class="item-price">$13.99</span></div>
+        <p class="item-desc">Grilled chicken breast topped with melted cheese and sautéed mushrooms. Served on Greek bread with choice of lemon rice, fries or side salad.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">B.L.T.</span><span class="item-price">$10.99</span></div>
+        <p class="item-desc">Served on Greek bread. Includes choice of side salad, lemon rice or fries.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD-ONS -->
+  <div class="menu-section" id="add-ons">
+    <h2><span class="cat-icon"></span> Add-Ons</h2>
+    <div class="addon-list">
+      <div class="addon-card"><span class="addon-name">Greek Bread</span><span class="addon-price">$1.99</span></div>
+      <div class="addon-card"><span class="addon-name">Deep Fried Shrimp (1)</span><span class="addon-price">$2.69</span></div>
+      <div class="addon-card"><span class="addon-name">Lemon Rice</span><span class="addon-price">$2.99</span></div>
+      <div class="addon-card"><span class="addon-name">French Fries</span><span class="addon-price">$2.99</span></div>
+      <div class="addon-card"><span class="addon-name">Feta Cheese (1 Stick)</span><span class="addon-price">$2.49</span></div>
+      <div class="addon-card"><span class="addon-name">Tzatziki Sauce (2oz)</span><span class="addon-price">$0.99</span></div>
+      <div class="addon-card"><span class="addon-name">Side Of Dressing (2oz)</span><span class="addon-price">$0.50</span></div>
+      <div class="addon-card"><span class="addon-name">Stick Of Souvlaki</span><span class="addon-price">$11.99</span></div>
+    </div>
+    <p style="font-size:.85rem;color:var(--muted);margin-top:.75rem">Souvlaki choice of chicken, pork, or turkey. Shrimp served with house made cocktail sauce.</p>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-section" id="desserts">
+    <h2><span class="cat-icon"></span> Desserts</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Baklava (2pc)</span><span class="item-price">$4.99</span></div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Mom's Carrot Cake</span><span class="item-price">$6.99</span></div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Pecan Turtle Cheesecake</span><span class="item-price">$7.29</span></div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Chocolate Dream Cake</span><span class="item-price">$4.99</span></div>
+        <p class="item-desc">Gluten Free</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Sweet Sampler</span><span class="item-price">$20.99</span></div>
+        <p class="item-desc">All four of our desserts on one plate.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAKE FOR LATER -->
+  <div class="menu-section" id="take-for-later">
+    <h2><span class="cat-icon"></span> Take for Later</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Uncooked Souvlaki Stick</span><span class="item-price">$10.79</span></div>
+        <p class="item-desc">Marinated and ready to grill.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Uncooked Greek Bread (6pc)</span><span class="item-price">$9.00</span></div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Uncooked Greek Bread (12pc)</span><span class="item-price">$18.00</span></div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Uncooked Andy's 12oz Sirloin</span><span class="item-price">$18.99</span></div>
+        <p class="item-desc">Seasoned and ready to grill.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Bottle of Greek Dressing</span><span class="item-price">$7.99</span></div>
+        <p class="item-desc">12oz bottle.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Bottle of Ranch Dressing</span><span class="item-price">$7.99</span></div>
+        <p class="item-desc">12oz bottle.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Steak Seasoning</span><span class="item-price">$2.99</span></div>
+        <p class="item-desc">2oz container of our special steak seasoning/dry rub. Great on everything.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Tub of Tzatziki (8oz)</span><span class="item-price">$5.00</span></div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Tub of Tzatziki (16oz)</span><span class="item-price">$10.00</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KIDS MENU -->
+  <div class="menu-section" id="kids">
+    <h2><span class="cat-icon"></span> Kids Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Kids Mac n Cheese</span><span class="item-price">$6.99</span></div>
+        <p class="item-desc">Served with choice of lemon rice or fries.</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-top"><span class="item-name">Kids Chicken Nuggets</span><span class="item-price">$6.99</span></div>
+        <p class="item-desc">Served with choice of lemon rice or fries.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER CTA -->
+  <div class="order-cta">
+    <h3>Ready to Order?</h3>
+    <p>Place your order online for pickup through our Clover ordering page.</p>
+    <a class="btn-order" href="https://andys-club-ogden.cloveronline.com/menu/all" target="_blank" rel="noopener">Order Now →</a>
+  </div>
+
+</div><!-- /menu-body -->
+
+<footer>
+  <div style="text-align:center;padding:1rem 0 .5rem"><div class="logo-wrap" style="margin-bottom:.75rem"><img src="/andy-logo.png" alt="Andy's Club" style="height:72px;width:72px;object-fit:contain;"></div></div>
+  <p><strong style="color:#fff">Andy's Club</strong> &nbsp;·&nbsp; 501 N Washington Blvd, Harrisville, UT 84404 &nbsp;·&nbsp; <a href="tel:8017829972">(801) 782-9972</a></p>
+  <p style="margin-top:.4rem">Hours: Mon–Sat 11:00 AM – 8:30 PM &nbsp;·&nbsp; <a href="/">Home</a> &nbsp;·&nbsp; <a href="/about">About</a> &nbsp;·&nbsp; <a href="/services">Services</a></p>
+</footer>
+
+<script>
+const hbg = document.getElementById('hbg');
+const nav = document.getElementById('nav-links');
+hbg.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  hbg.setAttribute('aria-expanded', nav.classList.contains('open'));
+});
+
+// Highlight active tab on scroll
+const sections = document.querySelectorAll('.menu-section');
+const tabLinks = document.querySelectorAll('.menu-tabs a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tabLinks.forEach(l => l.classList.remove('active'));
+      const activeLink = document.querySelector('.menu-tabs a[href="#' + e.target.id + '"]');
+      if (activeLink) activeLink.classList.add('active');
+    }
+  });
+}, {rootMargin: '-30% 0px -60% 0px'});
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
