@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <path id="topCircle" d="M 100,100 m -72,0 a 72,72 0 0,1 144,0"/>
+    <path id="botCircle" d="M 100,100 m -72,0 a 72,72 0 0,0 144,0"/>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="96" fill="#fff" stroke="#1a3a5c" stroke-width="3"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+  <circle cx="100" cy="100" r="78" fill="#fff" stroke="#1a3a5c" stroke-width="1"/>
+  <!-- Stars decoration -->
+  <text x="100" y="34" font-family="serif" font-size="6" fill="#c9a84c" text-anchor="middle" letter-spacing="3">★ ★ ★ ★ ★</text>
+  <!-- Top arc text: ANDY'S CLUB -->
+  <text font-family="'Georgia',serif" font-size="13" font-weight="bold" fill="#1a3a5c" letter-spacing="2">
+    <textPath href="#topCircle" startOffset="50%" text-anchor="middle">ANDY'S CLUB</textPath>
+  </text>
+  <!-- Bottom arc text: HARRISVILLE, UTAH -->
+  <text font-family="'Georgia',serif" font-size="8.5" fill="#1a3a5c" letter-spacing="1">
+    <textPath href="#botCircle" startOffset="50%" text-anchor="middle">HARRISVILLE, UTAH</textPath>
+  </text>
+  <!-- Mountain silhouette -->
+  <polygon points="65,128 80,102 90,115 100,95 112,115 122,100 138,128" fill="#4a5a3a" opacity="0.9"/>
+  <!-- EST year banner -->
+  <rect x="68" y="133" width="64" height="14" rx="2" fill="#1a3a5c"/>
+  <text x="100" y="143.5" font-family="'Georgia',serif" font-size="8" fill="#c9a84c" text-anchor="middle" letter-spacing="2">EST. 1974</text>
+  <!-- Center subtitle -->
+  <text x="100" y="158" font-family="'Georgia',serif" font-size="6.5" fill="#666" text-anchor="middle" letter-spacing=".5">GRILL · REFRESHMENT · BAR</text>
+  <!-- Flag elements: small Greek cross + US stars suggestion -->
+  <g transform="translate(75,108)">
+    <rect x="-7" y="-5" width="14" height="10" fill="#0040A0" rx="1"/>
+    <rect x="-7" y="-1.2" width="14" height="2.4" fill="#fff"/>
+    <rect x="-1.2" y="-5" width="2.4" height="10" fill="#fff"/>
+  </g>
+  <g transform="translate(125,108)">
+    <rect x="-7" y="-5" width="14" height="10" fill="#B22234" rx="1"/>
+    <rect x="-7" y="-3.4" width="14" height="1.8" fill="#fff"/>
+    <rect x="-7" y="-.3" width="14" height="1.8" fill="#fff"/>
+    <rect x="-7" y="2.8" width="14" height="1.8" fill="#fff"/>
+    <rect x="-7" y="-5" width="5.5" height="6.2" fill="#3C3B6E"/>
+  </g>
+</svg>
