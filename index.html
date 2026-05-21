@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Andy's Club | Authentic Greek Restaurant & Souvlaki in Ogden, UT</title>
+<meta name="description" content="Andy's Club serves authentic Greek cuisine in Ogden, Utah since 1974. Gyros, souvlaki, catering & drive-thru. Order online or call (801) 782-9972.">
+<meta name="keywords" content="Greek restaurant Ogden, souvlaki Ogden Utah, gyros Ogden, Greek catering Ogden, Mediterranean restaurant Utah, Greek food near me">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5F0E8;--warm-white:#FAF8F4;--olive:#6B7C5A;--olive-dark:#4A5A3A;
+  --tan:#C4A882;--tan-light:#E8D8C0;--charcoal:#2C2C28;--grey:#8A8680;
+  --white:#FFFFFF;--radius:6px;
+  --serif:'Playfair Display',serif;--sans:'Source Sans 3',sans-serif;
+  /* legacy aliases */
+  --navy:#2C2C28;--blue:#2C2C28;--blue-mid:#4A5A3A;--blue-light:#F5F0E8;
+  --blue-dark:#2C2C28;--sky:#6B7C5A;--gold:#C4A882;--text:#2C2C28;
+  --muted:#8A8680;--gray:#8A8680;--light:#E8D8C0;--offwhite:#FAF8F4;
+  --off-white:#FAF8F4;--border:#E8D8C0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--text);background:var(--white)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{background:var(--blue);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--serif);font-size:1.4rem;color:var(--white);letter-spacing:.5px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:none;flex-direction:column;background:var(--blue);position:absolute;top:64px;left:0;width:100%;padding:1rem 0}
+.nav-links.open{display:flex}
+.nav-links a{color:var(--white);padding:.75rem 1.5rem;font-size:1rem;font-weight:600;transition:background .2s}
+.nav-links a:hover{background:var(--blue-mid)}
+.hamburger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:.3s}
+
+/* HERO */
+.hero{background:var(--olive-dark);color:var(--white);text-align:center;padding:5rem 1.25rem 4rem}
+.hero-since{font-family:var(--sans);font-size:.85rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.hero h1{font-family:var(--serif);font-size:2.4rem;line-height:1.2;margin-bottom:.75rem}
+.hero p{font-size:1.05rem;font-weight:300;max-width:520px;margin:0 auto 2rem;opacity:.9}
+.btn-primary{background:var(--gold);color:var(--blue);font-weight:700;font-family:var(--sans);padding:.85rem 2rem;border-radius:var(--radius);font-size:1rem;display:inline-block;transition:opacity .2s}
+.btn-primary:hover{opacity:.88}
+.hero-note{margin-top:1rem;font-size:.8rem;opacity:.75}
+.hero-note a{color:var(--gold);font-weight:600}
+.hero-badges{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem}
+.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:.45rem 1rem;font-size:.8rem;font-weight:600;letter-spacing:.5px}
+
+/* SECTION SHARED */
+section{padding:3.5rem 1.25rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.5rem}
+.section-title{font-family:var(--serif);font-size:1.9rem;color:var(--blue);margin-bottom:1rem}
+
+/* HOURS + ORDER */
+.info-band{background:var(--blue-light);border-top:3px solid var(--gold)}
+.info-grid{display:grid;gap:2rem}
+.info-card{background:var(--white);border-radius:var(--radius);padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.info-card h3{font-family:var(--serif);color:var(--blue);font-size:1.2rem;margin-bottom:1rem}
+.hours-list{list-style:none}
+.hours-list li{display:flex;justify-content:space-between;padding:.35rem 0;border-bottom:1px solid #eef;font-size:.9rem}
+.hours-list li:last-child{border:none}
+.hours-list .closed{color:#b33}
+.hours-list .special{color:var(--blue-mid);font-weight:600}
+.order-note{background:var(--blue);color:var(--white);border-radius:var(--radius);padding:1rem 1.25rem;margin-top:1rem;font-size:.85rem}
+.order-note strong{color:var(--gold)}
+
+/* FEATURES */
+.features{background:var(--white)}
+.feat-grid{display:grid;gap:1.5rem;margin-top:2rem}
+.feat-card{border-left:4px solid var(--gold);padding:1rem 1.25rem;background:var(--blue-light);border-radius:0 var(--radius) var(--radius) 0}
+.feat-card h4{font-family:var(--serif);color:var(--blue);font-size:1.05rem;margin-bottom:.3rem}
+.feat-card p{font-size:.88rem;line-height:1.55}
+
+/* CATERING CTA */
+.catering-band{background:var(--blue);color:var(--white);text-align:center;padding:3.5rem 1.25rem}
+.catering-band .section-title{color:var(--white)}
+.catering-band p{max-width:500px;margin:.75rem auto 2rem;opacity:.88;font-size:.97rem;line-height:1.65}
+.btn-outline{border:2px solid var(--gold);color:var(--gold);background:transparent;font-weight:700;font-family:var(--sans);padding:.8rem 2rem;border-radius:var(--radius);font-size:1rem;display:inline-block;transition:background .2s,color .2s;cursor:pointer}
+.btn-outline:hover{background:var(--gold);color:var(--blue)}
+
+/* TESTIMONIALS */
+.testimonials{background:#f7f9fc}
+.testi-grid{display:grid;gap:1.25rem;margin-top:2rem}
+.testi-card{background:var(--white);border-radius:var(--radius);padding:1.25rem 1.5rem;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.stars{color:var(--gold);font-size:1rem;margin-bottom:.5rem}
+.testi-card p{font-size:.9rem;line-height:1.6;font-style:italic;margin-bottom:.75rem}
+.testi-card cite{font-size:.8rem;font-weight:600;color:var(--blue-mid)}
+
+/* MAP */
+.map-section{padding:0}
+.map-section iframe{width:100%;height:300px;border:none;display:block}
+
+/* FOOTER */
+footer{background:var(--blue);color:rgba(255,255,255,.8);padding:2.5rem 1.25rem 1.5rem}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;gap:2rem;margin-bottom:2rem}
+.footer-logo{font-family:var(--serif);font-size:1.3rem;color:var(--white);margin-bottom:.4rem}
+.footer-logo span{color:var(--gold)}
+.footer-tagline{font-size:.82rem;opacity:.7;margin-bottom:.75rem}
+.footer-since{font-size:.75rem;background:var(--gold);color:var(--blue);display:inline-block;padding:.2rem .6rem;border-radius:50px;font-weight:700}
+.footer-col h5{font-family:var(--serif);color:var(--white);margin-bottom:.75rem;font-size:1rem}
+.footer-col a{display:block;font-size:.88rem;margin-bottom:.4rem;opacity:.8;transition:opacity .2s}
+.footer-col a:hover{opacity:1}
+.social-links{display:flex;gap:1rem;margin-top:.5rem}
+.social-links a{opacity:.8;font-size:.85rem;font-weight:600;color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:space-between;font-size:.75rem;opacity:.6}
+
+/* TABLET+ */
+@media(min-width:640px){
+  .info-grid{grid-template-columns:1fr 1fr}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr 1fr 1fr}
+}
+@media(min-width:768px){
+  .hamburger{display:none}
+  .nav-links{display:flex;flex-direction:row;position:static;background:transparent;padding:0;width:auto}
+  .nav-links a{padding:.25rem .75rem}
+  .hero h1{font-size:3.2rem}
+  .testi-grid{grid-template-columns:repeat(3,1fr)}
+  .map-section iframe{height:380px}
+}
+body{background:var(--cream)!important}
+.logo-wrap{background:#fff;border-radius:50%;padding:4px;display:inline-flex;align-items:center;justify-content:center;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class='nav-logo' href='/' style="display:flex;align-items:center;"><div class="logo-wrap"><img src="/andy-logo.png" alt="Andy's Club" style="height:52px;width:52px;object-fit:contain;"></div></a>
+    <button class="hamburger" id="hbg" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href='/'>Home</a>
+      <a href='/about'>About</a>
+      <a href='/services'>Services</a>
+      <a href="/menu">Menu</a>
+      <a href="https://andys-club-ogden.cloveronline.com/menu/all" target="_blank" rel="noopener">Order Online</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-since">Serving Ogden Since 1974</div>
+  <h1>Authentic Greek Cuisine,<br>Made with Family Pride</h1>
+  <p>From our famous souvlaki to fresh gyros — over 50 years of real Greek flavors in the heart of Ogden, Utah.</p>
+  <a href="https://andys-club-ogden.cloveronline.com/menu/all" target="_blank" rel="noopener" class="btn-primary">Order Online Now</a>
+  <div class="hero-note">Max online order: <strong>$300</strong> — For larger orders call <a href="tel:8017829972">(801) 782-9972</a></div>
+  <div class="hero-badges">
+    <div class="badge"> Drive-Thru Available</div>
+    <div class="badge"> Catering &amp; Events</div>
+    <div class="badge"> Family-Owned 50+ Years</div>
+  </div>
+</section>
+
+<section class="info-band">
+  <div class="section-inner">
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Hours</h3>
+        <ul class="hours-list">
+          <li><span>Monday</span><span class="closed">Closed</span></li>
+          <li><span>Tuesday–Saturday</span><span>11:00 AM – 9:00 PM</span></li>
+          <li><span>Sunday</span><span class="special">Brunch 10:30 AM – 3:00 PM</span></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Order &amp; Contact</h3>
+        <p style="font-size:.9rem;margin-bottom:1rem;line-height:1.6">Dine-in, drive-thru, or carry-out — we make it easy to enjoy authentic Greek food your way.</p>
+        <a href="https://andys-club-ogden.cloveronline.com/menu/all" target="_blank" rel="noopener" class="btn-primary" style="font-size:.9rem;padding:.7rem 1.5rem">Order Online</a>
+        <div class="order-note"><strong>Note:</strong> Online orders capped at <strong>$300</strong>. For large orders or catering, call <a href="tel:8017829972" style="color:var(--gold);font-weight:700">(801) 782-9972</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="section-inner">
+    <div class="section-label">Why Andy's Club</div>
+    <div class="section-title">More Than a Restaurant</div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <h4> Drive-Thru Convenience</h4>
+        <p>One of the few Greek restaurants in Utah with a drive-thru. Get your gyro fix without leaving your car.</p>
+      </div>
+      <div class="feat-card">
+        <h4> 50+ Years of Heritage</h4>
+        <p>Andy's Club has called Ogden home since 1974. Family recipes, unchanged. Quality you can trust.</p>
+      </div>
+      <div class="feat-card">
+        <h4> Greek Catering &amp; Events</h4>
+        <p>From office lunches to weddings — we bring authentic Greek flavors to your event. Ask about custom menus.</p>
+      </div>
+      <div class="feat-card">
+        <h4> Scratch-Made Greek Classics</h4>
+        <p>Souvlaki, gyros, spanakopita, and more — every dish made fresh using traditional Greek techniques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="catering-band">
+  <div class="section-label" style="color:var(--gold)">Higher Margins, Bigger Events</div>
+  <div class="section-title">Catering for Every Occasion</div>
+  <p>Andy's Club brings 50 years of authentic Greek flavor to your next event. Weddings, corporate gatherings, birthdays — we handle the food so you handle the fun.</p>
+  <a class='btn-outline' href='/services'>Explore Catering Options</a>
+  &nbsp;&nbsp;
+  <a href="tel:8017829972" class="btn-primary">Call to Book: (801) 782-9972</a>
+</div>
+
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="section-label">What Guests Say</div>
+    <div class="section-title">Loved by Ogden for Generations</div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars"></div>
+        <p>"Andy's Club is a true Ogden institution. The gyros are the best I've had outside of Greece. Been coming here for 20 years and it never disappoints."</p>
+        <cite>— Cassie K.</cite>
+      </div>
+      <div class="testi-card">
+        <div class="stars"></div>
+        <p>"Catered our company party and everyone raved about the food. The souvlaki platter was gone in minutes. Professional, on-time, and delicious."</p>
+        <cite>— L.M.</cite>
+      </div>
+      <div class="testi-card">
+        <div class="stars"></div>
+        <p>"The drive-thru is so convenient. I grab lunch here twice a week. Fresh, fast, and authentic — you can taste the heritage in every bite."</p>
+        <cite>— Jay T.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="map-section">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.6!2d-111.9741!3d41.2284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87530a1e5b5b5b5b%3A0x1!2s501+N+Washington+Blvd%2C+Ogden%2C+UT+84404!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy" title="Andy's Club Location — 501 N Washington Blvd, Ogden, UT 84404"></iframe>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><div class="logo-wrap" style="margin-bottom:.75rem"><img src="/andy-logo.png" alt="Andy's Club" style="height:72px;width:72px;object-fit:contain;"></div></div>
+        <div class="footer-tagline">Authentic Greek Cuisine. Serving Ogden Since 1974.</div>
+        <div class="footer-since">Est. 1974 · Family Owned</div>
+        <div style="margin-top:1rem;font-size:.85rem;line-height:1.7">
+          501 N Washington Blvd<br>Ogden, UT 84404<br>
+          <a href="tel:8017829972" style="color:var(--gold);font-weight:600">(801) 782-9972</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href='/'>Home</a>
+        <a href='/about'>About</a>
+        <a href='/services'>Services &amp; Catering</a>
+        <a href="https://andys-club-ogden.cloveronline.com/menu/all" target="_blank" rel="noopener">Order Online</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe" target="_blank" rel="noopener">Apply Online (Hiring)</a>
+      </div>
+      <div class="footer-col">
+        <h5>Hours</h5>
+        <p style="font-size:.85rem;line-height:1.9">
+          Mon: Closed<br>
+          Tue–Sat: 11am–9pm<br>
+          Sun: Brunch 10:30am–3pm
+        </p>
+        <h5 style="margin-top:1.25rem">Follow Us</h5>
+        <div class="social-links">
+          <a href="https://facebook.com/andysclubogden" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://instagram.com/andysclubogden" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/@andysclubofogden" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Andy's Club. All rights reserved.</span>
+      <span>501 N Washington Blvd, Ogden, UT 84404</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('hbg').addEventListener('click',function(){
+  document.getElementById('nav-links').classList.toggle('open');
+});
+</script>
+
+<section id="order-online" style="background:#1a1a1a;padding:60px 20px;text-align:center;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-size:2.5rem;margin-bottom:12px;"></div>
+    <h2 style="color:#fff;font-size:2rem;margin:0 0 12px;font-family:inherit;">Order Online</h2>
+    <p style="color:#ccc;font-size:1.1rem;margin:0 0 32px;line-height:1.6;">Fresh Greek food ready for pickup. Browse our full menu and place your order directly — no phone call needed.</p>
+    <a href="https://andys-club-ogden.cloveronline.com/menu/all" target="_blank" rel="noopener"
+       style="display:inline-block;background:#e8a020;color:#fff;font-size:1.2rem;font-weight:700;padding:18px 48px;border-radius:8px;text-decoration:none;letter-spacing:0.5px;"
+       onmouseover="this.style.background='#cf8e1a'" onmouseout="this.style.background='#e8a020'">
+      Order Now →
+    </a>
+    <p style="color:#888;font-size:0.85rem;margin:20px 0 0;">Powered by Clover Online Ordering</p>
+  </div>
+</section>
+</body>
+</html>
